@@ -1,0 +1,7 @@
+{
+  "name": "GodIsCalling",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
