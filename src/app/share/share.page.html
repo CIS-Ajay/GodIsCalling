@@ -1,0 +1,27 @@
+<ion-content padding>
+  <div class="height-100">
+    <ion-grid>
+      <ion-row margin-top>
+        <ion-col (click)="imgClicked('twitter')">
+          <img src="assets/images/twitter.png" />
+        </ion-col>
+        <ion-col (click)="imgClicked('fb')">
+          <img src="assets/images/facebook.png" />
+        </ion-col>
+      </ion-row>
+      <ion-row margin-top>
+        <ion-col (click)="imgClicked('googleplus')">
+          <img src="assets/images/googleplus.png" />
+        </ion-col>
+        <ion-col (click)="imgClicked('instagram')">
+          <img src="assets/images/linkedin.png" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="btn-footer" padding-left padding-right>
+      <ion-button expand="block" color="primary" (click)="close()">
+        {{ 'login.close' | translate }}
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

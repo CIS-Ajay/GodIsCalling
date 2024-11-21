@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">God Calling</string>
+    <string name="title_activity_main">God Calling</string>
+    <string name="package_name">com.JC2day.godis</string>
+    <string name="custom_url_scheme">com.JC2day.godis</string>
+</resources>

@@ -1,20 +1,53 @@
-<ion-header [translucent]="true">
+<ion-header class="home-ion-header">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button auto-hide="false">
+        <ion-icon name="menu" class="white-color"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content class="contentcss" >
+  <div class="ion-text-center ion-padding-top">
+    <img id="logo" src="assets/images/logo.png" />
   </div>
+
+  <div class="ion-text-center ion-margin-top ion-padding-bottom">
+    <ion-button (click)="dailyDetails()" shape="outline" color="light">
+      <span class="bold"> {{'home.daily' | translate}} </span>
+    </ion-button>
+  </div>
+
+  <div class="ion-text-center ion-margin-top ion-padding">
+    <a href="http://www.agiamedia.com" class="dark-color">
+      {{'home.agiamedia' | translate}}
+    </a>
+  </div>
+
+  <div class="ion-text-center ion-margin-top ion-padding">
+    <a href="http://www.agiamedia.com/donate" class="dark-color">
+      {{'home.donate' | translate}}
+    </a>
+  </div>
+  <div>
+
+  </div>
+
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col *ngIf="!myGlobals.IsLoggedInFlag">
+        <ion-icon name="person-outline" (click)="login()"></ion-icon>
+      </ion-col>
+      <ion-col *ngIf="myGlobals.IsLoggedInFlag">
+        <ion-icon name="log-out-outline" (click)="logout()"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="calendar-outline" (click)="openAllTxt()"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="share-social-sharp" (click)="share()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

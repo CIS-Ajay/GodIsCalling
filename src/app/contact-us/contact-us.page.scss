@@ -1,0 +1,43 @@
+ion-header {
+    background: #04426c !important;
+    border-color: #f7f7f8 !important;
+}
+
+ion-content {
+    background: aliceblue !important;
+    color: black !important;
+}
+
+ion-input {
+    border: 1px solid #ddd;
+    color: black !important;
+}
+
+ion-textarea {
+    border: 1px solid #ddd;
+    height: 100px;
+    color: black !important;
+}
+
+ion-label {
+    margin-right: -24% !important;
+    margin-bottom: 3% !important;
+    font-size: larger !important;
+    font-weight: 700;
+    color: black !important;
+
+    // font-size: 14px;
+    // font-weight: 700;
+    // color: black !important;
+
+}
+.item-inner {
+    padding: 0 !important;
+}
+
+ion-item {
+    padding: 0 !important;
+}
+.page_subtitle{
+    color: black;
+}

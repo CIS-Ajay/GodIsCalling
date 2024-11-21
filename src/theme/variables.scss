@@ -1,2 +1,17 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+$app-direction: ltr;
+
+
+$colors: (
+  primary:    #009ad7,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #057dad,
+  dark:       #04395f,
+  white:      #ffffff,
+  grey:       #eeeeee,
+  red:        #ff3737,
+  gold:       #efce4a,
+  warmGrey:   #9b9b9b
+);
+
+@import "theme.scss";

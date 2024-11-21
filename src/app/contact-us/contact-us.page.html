@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="openHome()">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ 'contact-us.title' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button>
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2 class="page_subtitle">{{ 'contact-us.title' | translate }}</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="send()">
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label position="stacked">{{ 'contact-us.name' | translate }}</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+        <!-- <ion-input label="Outline input" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input> -->
+
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">{{ 'contact-us.email' | translate }}</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">{{ 'contact-us.message' | translate }}</ion-label>
+        <ion-textarea formControlName="message"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" type="submit" [disabled]="contactForm.invalid">
+      {{ 'contact-us.send' | translate }}
+    </ion-button>
+  </form>
+</ion-content>

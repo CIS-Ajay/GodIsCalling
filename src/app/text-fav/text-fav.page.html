@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar hideBackButton="true">
+    <ion-icon name="home" (click)="openHome()" class="white-color home-icon"></ion-icon>
+    <ion-title>{{'fav.title' | translate}}</ion-title>
+    <button ion-button end menuToggle>
+      <ion-icon name="menu" class="white-color"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="page_subtitle" padding>
+    {{'fav.title' | translate}}
+  </h2>
+  <ion-list no-lines>
+    <ion-item *ngFor="let item of allTxt">
+      <ion-row (click)="openDetails(item)">
+        <ion-col>
+          <div class="date">
+            <strong>{{getMonthName(item.DateMounth)}}</strong>
+            <span>{{item.DateDay}}</span>
+            <em>{{year}}</em>
+          </div>
+        </ion-col>
+        <ion-col class="flex">
+          <div color="primary" ion-text [innerHTML]="item.title">
+          </div>
+          <div class="short" [innerHTML]="item.short_words">
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-icon class="close" name="close" item-right (click)="removeFav(item.FavoriteID)"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,3 +1,21 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="content" side="end">
+    <ion-content>
+      <div *ngIf="myGlobals.userDetails?.Fullname" text-center class="photo-container">
+        <img [src]="myGlobals.userDetails.Img || 'assets/images/no-image.gif'" class="photo" />
+        <br />
+        <span>{{ 'home.hello' | translate }}</span> <span>{{ myGlobals.userDetails.Fullname }}</span>
+      </div>
+      <ion-list>
+        <ng-container *ngFor="let p of pages">
+          <ion-item *ngIf="showItem(p.checkForLogin)" (click)="openPage(p)">
+            <ion-icon slot="start" [name]="p.icon"></ion-icon>
+            <ion-label>{{ p.title | translate }}</ion-label>
+          </ion-item>
+        </ng-container>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="content" main swipeBackEnabled="false"></ion-router-outlet>
 </ion-app>

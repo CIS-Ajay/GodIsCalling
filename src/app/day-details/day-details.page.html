@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="openHome()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+      <ion-button (click)="openList()">
+        <ion-icon name="musical-notes"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ 'day-details.title' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>{{ 'day-details.title' | translate }}</h2>
+  <span>{{ data.title }}</span>
+  <span>{{ dateStr }}</span>
+  <div>
+    <img [src]="img" />
+  </div>
+  <div class="div_m">
+    <audio [src]="soundSrc" controls></audio>
+    <ion-row>
+      <ion-col *ngIf="myGlobals.IsLoggedInFlag">
+        <ion-button (click)="addToFav()">
+          <ion-icon name="star"></ion-icon>
+          {{ 'day-details.add-fav' | translate }}
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="share()">
+          <ion-icon name="share-alt"></ion-icon>
+          {{ 'day-details.share' | translate }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <p [innerHTML]="data.details"></p>
+  <ion-segment [(ngModel)]="options" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="show">
+      {{ 'day-details.comments' | translate }}
+    </ion-segment-button>
+    <ion-segment-button value="add">
+      {{ 'day-details.add' | translate }}
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="options">
+    <div *ngSwitchCase="'add'">
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">{{ 'contact-us.name' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">{{ 'contact-us.email' | translate }}</ion-label>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">{{ 'day-details.comment' | translate }}</ion-label>
+          <ion-textarea [(ngModel)]="comment"></ion-textarea>
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" (click)="addComment()">
+        {{ 'contact-us.send' | translate }}
+      </ion-button>
+    </div>
+    <div *ngSwitchCase="'show'">
+      <ion-list *ngFor="let item of comments">
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="assets/images/user.png">
+          </ion-avatar>
+          <p>{{ item.Comment }}</p>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

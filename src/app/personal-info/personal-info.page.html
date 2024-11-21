@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar hideBackButton="true">
+    <ion-icon name="home" (click)="openHome()" class="white-color home-icon"></ion-icon>
+    <ion-title> {{'personal-info.title' | translate}}</ion-title>
+    <button ion-button end menuToggle>
+      <ion-icon name="menu" class="white-color"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 class="page_subtitle">
+    {{'personal-info.title' | translate}}
+  </h2>
+  <ion-list no-lines>
+    <ion-item>
+      <ion-label>{{'register.name' | translate}}</ion-label>
+      <ion-label>{{data.Fullname}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="data.Img !== ''">
+      <ion-label>{{'register.image' | translate}}</ion-label>
+      <img [src]="data.Img" />
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'register.birthdate' | translate}}</ion-label>
+      <ion-label>{{formatDate(data.Birthdate)}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'register.country' | translate}}</ion-label>
+      <ion-label>{{data.Country}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'register.tel' | translate}}</ion-label>
+      <ion-label>{{data.Telephone}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'register.email' | translate}}</ion-label>
+      <ion-label>{{data.Email}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'register.username' | translate}}</ion-label>
+      <ion-label>{{data.Username}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'register.password' | translate}}</ion-label>
+       <ion-label>{{maskPassword(data.Password)}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- <button ion-button block color="primary" (click)="edit()">
+      {{'personal-info.edit' | translate}}
+    </button> -->
+</ion-content>

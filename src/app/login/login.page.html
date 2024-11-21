@@ -1,0 +1,24 @@
+<ion-content padding>
+  <div class="login-container">
+    <h4>{{'login.title' | translate}}</h4>
+    <ion-list>
+      <ion-label stacked>{{'login.username' | translate}}</ion-label>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="username"></ion-input>
+      </ion-item>
+      <ion-label>{{'login.password' | translate}}</ion-label>
+      <ion-item>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" class="login-button">{{ 'login.login' | translate }}</ion-button>
+    
+    <div class="options">
+      <ion-button fill="clear" (click)="forgetpassword()">{{ 'login.forget' | translate }}</ion-button>
+      <ion-button fill="clear" (click)="register()">{{ 'login.register' | translate }}</ion-button>
+    </div>
+    
+    <ion-button expand="block" class="btn-footer close-button" (click)="closeLogin()">{{ 'login.close' | translate }}</ion-button>
+  </div>
+</ion-content>

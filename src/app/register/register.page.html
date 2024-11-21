@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="openHome()">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ 'register.title' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button>
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-container">
+    <!-- <h2 class="page-subtitle">{{ 'register.title' | translate }}</h2> -->
+    <form (ngSubmit)="register()" #registerForm="ngForm" class="tag-form">
+      <ion-list>
+        <!-- Name Field -->
+        <ion-item>
+          <ion-label position="stacked">{{ 'register.name' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="name" name="name" required></ion-input>
+        </ion-item>
+  
+        <!-- Birthdate Field -->
+        <ion-item>
+          <ion-label position="stacked">{{ 'register.birthdate' | translate }}</ion-label>
+          <ion-input type="date" [(ngModel)]="birthdate" name="birthdate" [max]="[today]" required></ion-input>
+        </ion-item>
+  
+        <!-- Country Field -->
+        <ion-item>
+          <ion-label position="stacked">{{ 'register.country' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="country" name="country"></ion-input>
+        </ion-item>
+  
+        <!-- Telephone Field -->
+        <ion-item>
+          <ion-label position="stacked">{{ 'register.tel' | translate }}</ion-label>
+          <ion-input type="tel" [(ngModel)]="tel" name="tel" pattern="^\d{10,16}$" required></ion-input>
+        </ion-item>
+  
+        <!-- Email Field -->
+        <ion-item>
+          <ion-label position="stacked">{{ 'register.email' | translate }}</ion-label>
+          <ion-input type="email" [(ngModel)]="email" name="email" required email></ion-input>
+        </ion-item>
+  
+        <!-- Username Field -->
+        <ion-item>
+          <ion-label position="stacked">{{ 'register.username' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="username" name="username" required></ion-input>
+        </ion-item>
+  
+        <!-- Password Field -->
+        <ion-item>
+          <ion-label position="stacked">{{ 'register.password' | translate }}</ion-label>
+          <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+        </ion-item>
+  
+        <!-- Confirm Password Field -->
+        <ion-item>
+          <ion-label position="stacked">{{ 'register.confirm-password' | translate }}</ion-label>
+          <ion-input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required></ion-input>
+        </ion-item>
+      </ion-list>
+  
+      <!-- Submit Button -->
+      <ion-button expand="block" type="submit" [disabled]="registerForm.invalid">
+        {{ 'register.register' | translate }}
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

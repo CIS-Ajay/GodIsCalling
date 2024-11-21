@@ -1,0 +1,74 @@
+ion-header {
+    background: #04426c !important;
+    border-color: #f7f7f8 !important;
+}
+
+ion-content {
+    background: aliceblue !important;
+    color: black !important;
+}
+
+ion-item
+{
+    border-bottom: 0.55px solid #c8c7cc !important;
+    .item-inner
+    {
+        border: none !important;
+        padding: 0 !important;
+    }
+    .short
+    {
+        white-space: normal;
+    }
+    .flex
+    {
+        flex: 2.5;
+    }
+    .date {
+        font-size: 1em;
+        display: block;
+        position: relative;
+        width: 80px;
+        height: 6em;
+        background-color: black;
+        border-radius: 0.6em;
+        box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
+        overflow: hidden;
+        text-align: center;
+        strong
+        {
+            top: 0;
+            padding: 0;
+            color: black;
+            background-color: #009ad7;
+            border-bottom: 1px dashed #009ad7;
+            box-shadow: 0 2px 0 #4ecdff;
+            display: block;
+        }
+        span {
+            font-size: 2.8em;
+            letter-spacing: -0.05em;
+            padding-top: 0.8em;
+            color: #2f2f2f;
+            line-height: 65px;
+        }
+        em {
+            display: block;
+            bottom: 0.3em;
+            color: #009ad7;
+        }
+    }
+}
+.calendar
+{
+    color: black !important;
+    font-size: x-large;
+    float: left;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+.page_subtitle{
+    margin: 3% 3% 2% 0%;
+    color: black !important;
+
+}

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar hideBackButton="true">
+    <ion-icon name="home" (click)="openHome()" class="white-color home-icon"></ion-icon>
+    <ion-title *ngIf="type === '0'"> {{'info.title0' | translate}}</ion-title>
+    <ion-title *ngIf="type === '1'"> {{'info.title1' | translate}}</ion-title>
+    <ion-title *ngIf="type === '2'"> {{'info.title2' | translate}}</ion-title>
+    <button ion-button end menuToggle>
+      <ion-icon name="menu" class="white-color"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 class="page_subtitle">
+    <span *ngIf="type === '0'"> {{'info.title0' | translate}}</span>
+    <span *ngIf="type === '1'"> {{'info.title1' | translate}}</span>
+    <span *ngIf="type === '2'"> {{'info.title2' | translate}}</span>
+  </h2>
+  <p [innerHTML]="details">
+  </p>
+</ion-content>

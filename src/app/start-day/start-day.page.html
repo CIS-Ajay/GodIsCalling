@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="openHome()">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ 'start-day.title' | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button>
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="page_subtitle" padding>{{ 'start-day.title' | translate }}</h2>
+  <ion-icon name="calendar" class="calendar" (click)="openDate()"></ion-icon>
+  <ion-list lines="none">
+    <ion-item *ngFor="let item of allTxt" (click)="openDetails(item)">
+      <ion-row>
+        <ion-col>
+          <div class="date">
+            <strong>{{ getMonthName(item.DateMounth) }}</strong>
+            <span>{{ item.DateDay }}</span>
+          </div>
+        </ion-col>
+        <ion-col class="flex">
+          <div ion-text color="primary" [innerHTML]="item.title"></div>
+          <div class="short" [innerHTML]="item.short_words"></div>
+        </ion-col>
+      </ion-row>
+      <ion-icon color="medium" name="arrow-forward" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <div padding-left padding-right *ngIf="showMore">
+    <ion-button expand="block" color="primary" (click)="more()">
+      {{ 'start-day.more' | translate }}
+    </ion-button>
+  </div>
+</ion-content>

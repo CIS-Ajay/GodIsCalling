@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "8639678710",
+    "firebase_url": "https://godis-ce0c7.firebaseio.com",
+    "project_id": "godis-ce0c7",
+    "storage_bucket": "godis-ce0c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8639678710:android:e7b3511771703c11",
+        "android_client_info": {
+          "package_name": "com.JC2day.godis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8639678710-vcp2o7hvqd1h7bm5iivusu3o75umjeat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI7cge6TwzeBW8t0nmKiezdD2X1xaTiNw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
